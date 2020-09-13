@@ -75,6 +75,12 @@ void insert_inbetween(int value, int index, int index2, list *head){
     ins->next = temp;
 }
 
+//  delete node
+// void deleteNode(){
+
+// }
+
+
 // dealocate and delete linked list/free up memory
 void destroy_list(list* head){
     int i = 0;
