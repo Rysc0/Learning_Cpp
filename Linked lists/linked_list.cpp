@@ -76,9 +76,18 @@ void insert_inbetween(int value, int index, int index2, list *head){
 }
 
 //  delete node
-// void deleteNode(){
-
-// }
+void deleteNode(list *head, int index){
+    list *temp = findNode(head, index);
+    while(head != NULL){
+        if(head->next == temp && head->next->index == index){
+            head->next = temp->next;
+            delete temp;
+            cout << "deleted node..." << endl;
+        }
+        head = head->next;
+    }
+    
+}
 
 
 // dealocate and delete linked list/free up memory
@@ -145,6 +154,10 @@ int main(){
     list_display(head);
     cout << "------------------------------" << endl;
 
+    deleteNode(head,0);
+
+    list_display(head);
+    cout << "------------------------------" << endl;
     destroy_list(head);
     cout << "------------------------------" << endl;
  
